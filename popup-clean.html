@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Wallet</title>
+    <link rel="stylesheet" href="popup-clean.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>💳 Digital Wallet</h1>
+                    <p>Secure item storage</p>
+                </div>
+                <button class="settings-btn" id="settingsBtn" title="Settings">
+                    <img src="icons/button-icons/settings.svg" width="22" height="22" class="settings-icon">
+                </button>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button class="btn btn-primary" id="addItemBtn">
+                ➕ Add Item
+            </button>
+        </div>
+
+        <div class="items-container" id="itemsContainer">
+            <div class="empty-state" id="emptyState">
+                <h3>No items yet</h3>
+                <p>Click "Add Item" to get started</p>
+            </div>
+        </div>
+
+        <!-- Watermark -->
+        <a href="https://x.com/swayam_voidroot" target="_blank" rel="noopener" class="watermark">coded by voidroot ✨</a>
+    </div>
+
+    <!-- Add/Edit Modal -->
+    <div class="modal" id="itemModal">
+        <div class="modal-content">
+            <h3 id="modalTitle">Add New Item</h3>
+            <form id="itemForm">
+                <div class="form-group">
+                    <label for="itemValue">Website URL or Value</label>
+                    <input type="text" id="itemValue" placeholder="Enter website URL or any value..." required>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn" id="cancelBtn">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="saveBtn">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Theme Selector Modal -->
+    <div class="modal" id="themeModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🎨 Choose Theme</h2>
+            </div>
+            <div class="theme-grid">
+                <div class="theme-option" data-theme="charcoal-mocha" id="theme-charcoal-mocha">
+                    <div class="theme-preview charcoal-mocha-theme"></div>
+                    <span>Charcoal Mocha</span>
+                </div>
+                <div class="theme-option" data-theme="midnight-copper" id="theme-midnight-copper">
+                    <div class="theme-preview midnight-copper-theme"></div>
+                    <span>Midnight Copper</span>
+                </div>
+                <div class="theme-option" data-theme="smoky-forest" id="theme-smoky-forest">
+                    <div class="theme-preview smoky-forest-theme"></div>
+                    <span>Smoky Forest</span>
+                </div>
+                <div class="theme-option" data-theme="velvet-plum" id="theme-velvet-plum">
+                    <div class="theme-preview velvet-plum-theme"></div>
+                    <span>Velvet Plum</span>
+                </div>
+                <div class="theme-option" data-theme="slate-espresso" id="theme-slate-espresso">
+                    <div class="theme-preview slate-espresso-theme"></div>
+                    <span>Slate Espresso</span>
+                </div>
+                <div class="theme-option" data-theme="ash-bronze" id="theme-ash-bronze">
+                    <div class="theme-preview ash-bronze-theme"></div>
+                    <span>Ash Bronze</span>
+                </div>
+                <div class="theme-option" data-theme="soft-linen" id="theme-soft-linen">
+                    <div class="theme-preview soft-linen-theme"></div>
+                    <span>Soft Linen</span>
+                </div>
+                <div class="theme-option" data-theme="nordic-sand" id="theme-nordic-sand">
+                    <div class="theme-preview nordic-sand-theme"></div>
+                    <span>Nordic Sand</span>
+                </div>
+                <div class="theme-option" data-theme="clay-cream" id="theme-clay-cream">
+                    <div class="theme-preview clay-cream-theme"></div>
+                    <span>Clay & Cream</span>
+                </div>
+                <div class="theme-option" data-theme="modern-sage" id="theme-modern-sage">
+                    <div class="theme-preview modern-sage-theme"></div>
+                    <span>Modern Sage</span>
+                </div>
+                <div class="theme-option" data-theme="ivory-blush" id="theme-ivory-blush">
+                    <div class="theme-preview ivory-blush-theme"></div>
+                    <span>Ivory Blush</span>
+                </div>
+                <div class="theme-option" data-theme="warm-minimal" id="theme-warm-minimal">
+                    <div class="theme-preview warm-minimal-theme"></div>
+                    <span>Warm Minimal</span>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button type="button" class="btn" id="themeCloseBtn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="firestore-rest-service.js"></script>
+    <script src="popup-clean.js"></script>
+</body>
+</html>
